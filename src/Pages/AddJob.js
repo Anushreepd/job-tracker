@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
+import { JobContext } from "../Context/JobContext";
 
 const AddJob = ({ jobs, setJobs }) => {
   const [company, setCompany] = useState("");
   const [role, setRole] = useState("");
   const [status, setStatus] = useState("Applied");
   const navigate = useNavigate();
+  const { dispatch } = useContext(JobContext)
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -17,7 +19,7 @@ const AddJob = ({ jobs, setJobs }) => {
       status,
     };
 
-    setJobs([...jobs, newJob]);
+    dispatch({ type: "ADD_JOB", payload: newJob})
     navigate("/jobs");
   };
 
