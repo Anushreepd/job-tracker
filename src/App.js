@@ -5,7 +5,6 @@ import JobList from "./Pages/JobList";
 import AddJob from "./Pages/AddJob";
 import EditJob from "./Pages/EditJob";
 import PageNotFound from "./Pages/PageNotFound";
-import Header from "./Components/Header";
 import { useState,useEffect } from "react";
 
 function App() {
@@ -13,7 +12,6 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <Header />
         <Routes>
           <Route
             path="/jobs"
@@ -26,6 +24,11 @@ function App() {
           <Route
             path="/edit/:id"
             element={<EditJob />}
+          />
+
+          <Route
+            index
+            element={<JobList />}
           />
 
           <Route path="*" element={<PageNotFound />} />
