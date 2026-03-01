@@ -1,48 +1,115 @@
-# Job Application Tracker
+# 🏢 Hybrid Work Tracker
 
-A frontend web application built with React to track and manage job applications efficiently.  
-The app allows users to add, edit, delete, search, and filter job applications, with data persisted in the browser.
+A calendar-based attendance tracking application built using **React + Redux Toolkit**.
+
+This tool helps employees track their monthly:
+
+- 🟢 Work From Office (WFO)
+- 🔵 Work From Home (WFH)
+- 🔴 Leave
+
+It also calculates **monthly WFO compliance (3 days per week rule)** and displays a visual dashboard summary.
 
 ---
 
-## 🚀 Features
+## 🚀 Live Features
 
-- Add new job applications
-- Edit existing job details
-- Delete job entries
-- Search jobs by company name
-- Filter jobs by status (Applied, Interview, Offer, Rejected)
-- Persistent data storage using localStorage
-- Clean and reusable component structure
+### 📅 Interactive Calendar
+- Monthly calendar view
+- Navigate between months
+- Weekends automatically disabled
+- Click any weekday to mark attendance
+
+### 🎯 Attendance Status Options
+- WFO
+- WFH
+- Leave
+
+### 📊 Monthly Summary Dashboard
+- Total WFO days
+- Total WFH days
+- Total Leave days
+- WFO Compliance percentage
+- Dynamic progress bar
+
+### 💾 Persistent Data
+- Data stored in localStorage
+- Attendance remains after refresh
+
+---
+
+## 🧠 Business Logic
+
+- 3 WFO days required per week
+- Monthly required WFO automatically calculated
+- Compliance percentage dynamically updated
+- Progress capped at 100%
 
 ---
 
 ## 🛠 Tech Stack
 
 - React
-- React Router
-- Context API
-- useReducer
-- JavaScript (ES6+)
-- HTML & CSS
+- Redux Toolkit
+- React Redux
+- date-fns
+- CSS Flexbox & Grid
+- LocalStorage
 
 ---
 
-## 🧠 Key Concepts Used
+## 📂 Project Structure
 
-- Global state management using Context API
-- Predictable state updates with useReducer
-- Derived state for search and filter functionality
-- Side effects handled with useEffect
-- Component reusability and clean architecture
+```
+src/
+ ├── app/
+ │    └── store.js
+ ├── features/
+ │    └── attendance/
+ │         └── attendanceSlice.js
+ ├── components/
+ │    └── Calendar.js
+ ├── App.js
+ └── App.css
+```
 
----## ⚙️ Getting Started
+---
 
-### Prerequisites
-- Node.js
-- npm
-
-### Installation
+## ⚙️ Installation
 
 ```bash
+git clone <your-repo-url>
+cd hybrid-work-tracker
 npm install
+npm start
+```
+
+---
+
+## 📈 Future Enhancements
+
+- Weekly compliance breakdown
+- Yearly overview
+- Analytics charts
+- Export attendance report (PDF)
+- Dark mode
+- Authentication system
+
+---
+
+## 💡 Why This Project?
+
+This project demonstrates:
+
+- Real-world business rule implementation
+- State management using Redux Toolkit
+- Derived data calculations
+- Dynamic UI rendering
+- Clean dashboard layout architecture
+- Persistence using localStorage
+
+---
+
+## 👩‍💻 Author
+
+Built as part of React & Redux learning journey.
